@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rustem.hasher.MainActivity"
+    android:background="@drawable/background_photo">
+
+    <EditText
+        android:id="@+id/inputTxt"
+        android:layout_width="324dp"
+        android:layout_height="103dp"
+        android:layout_x="28dp"
+        android:layout_y="34dp"
+        android:ems="10"
+        android:textSize="30sp"
+        android:textColor="#b10d1e"
+        android:textColorHint="#b10d1e"
+        android:hint="Enter plain text"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"/>
+
+    <EditText
+        android:id="@+id/resultView"
+        android:layout_width="330dp"
+        android:layout_height="176dp"
+        android:layout_x="29dp"
+        android:layout_y="320dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:textSize="20sp"
+        android:textColor="#a64615"
+        android:enabled="false"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"/>
+
+    <Button
+        android:id="@+id/copyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="269dp"
+        android:layout_y="273dp"
+        android:text="Copy" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="142dp"
+        android:layout_height="59dp"
+        android:layout_x="33dp"
+        android:layout_y="207dp"
+        android:textSize="20sp" />
+
+
+</AbsoluteLayout>
