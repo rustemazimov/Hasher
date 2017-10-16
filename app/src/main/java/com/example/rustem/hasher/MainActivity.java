@@ -12,7 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+/**
+ * @author Rustem Azimov
+ *
+ */
 public class MainActivity extends AppCompatActivity {
     /*
      * Function class instance which contains a method for hashing with
@@ -73,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     /*
                      * if the selected option isn't "Select" and NullPointerException won' occur
-                     * {
-                     *      copy hashed text to clipboard
+                     * copy hashed text to clipboard
                      */
                     copy("hashedTxt", outputTxtView.getText().toString());
                 }
