@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
                         Function.MD5,
                         Function.SHA1,
                         Function.SHA256,
-                        Function.SHA512,
+                        Function.SHA512/*,
                         Function.BCRYPT,
-                        Function.PBKDF2
+                        Function.PBKDF2*/
                 };
         //Specifies a method option for hashing
         Spinner s = (Spinner) findViewById(R.id.spinner);

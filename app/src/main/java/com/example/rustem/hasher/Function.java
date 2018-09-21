@@ -26,9 +26,9 @@ public class Function {
                     MD5 = "MD5",
                     SHA1 = "SHA1",
                     SHA256 = "SHA256",
-                    SHA512 = "SHA512",
+                    SHA512 = "SHA512"/*,
                     BCRYPT = "BCRYPT",
-                    PBKDF2 = "PBKDF2";
+                    PBKDF2 = "PBKDF2"*/;
 
     private final static String problemResponse = "You need support\nContact with us";
 
@@ -38,8 +38,8 @@ public class Function {
              case SHA1: return convertToSHA1(text);
               case SHA256: return convertToSHA256(text);
                case SHA512: return convertToSHA512(text);
-                case BCRYPT: return convertToBCRYPT(text);
-                 case PBKDF2: return convertToPBKDF2(text);
+                /*case BCRYPT: return convertToBCRYPT(text);
+                 case PBKDF2: return convertToPBKDF2(text);*/
                     default: return problemResponse;
         }
     }
@@ -112,7 +112,7 @@ public class Function {
         }
         return problemResponse;
     }  
-    private String convertToBCRYPT(String password_plaintext) {
+    /*private String convertToBCRYPT(String password_plaintext) {
 		String salt = BCrypt.gensalt(12);
 		String hashed_password = BCrypt.hashpw(password_plaintext, salt);
 
@@ -129,23 +129,23 @@ public class Function {
     private final int SALT_INDEX = 1;
     private final int PBKDF2_INDEX = 2;
 
-    /**
+    *//**
      * Returns a salted PBKDF2 hash of the password.
      *
      * @param   password    the password to hash
      * @return              a salted PBKDF2 hash of the password
-     */
+     *//*
     public String convertToPBKDF2(String password)
     {
         return convertToPBKDF2(password.toCharArray());
     }
 
-    /**
+    *//**
      * Returns a salted PBKDF2 hash of the password.
      *
      * @param   password    the password to hash
      * @return              a salted PBKDF2 hash of the password
-     */
+     *//*
     private String convertToPBKDF2(char[] password)
         
     {
@@ -170,7 +170,7 @@ public class Function {
         PBEKeySpec spec = new PBEKeySpec(password, salt, iterations, bytes * 8);
         SecretKeyFactory skf = SecretKeyFactory.getInstance(PBKDF2_ALGORITHM);
         return skf.generateSecret(spec).getEncoded();
-    }
+    }*/
     private  String convertByteToHex(byte data[])
     {
         StringBuilder hexData = new StringBuilder();
