@@ -1,55 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rustem.hasher.MainActivity"
-    android:background="@drawable/background_photo">
+    android:background="@drawable/background_photo"
+    android:weightSum="1">
 
-    <EditText
-        android:id="@+id/inputTxt"
-        android:layout_width="324dp"
-        android:layout_height="103dp"
-        android:layout_x="28dp"
-        android:layout_y="34dp"
-        android:ems="10"
-        android:textSize="30sp"
-        android:textColor="#b10d1e"
-        android:textColorHint="#b10d1e"
-        android:hint="Enter plain text"
-        android:inputType="textMultiLine"
-        android:imeOptions="actionDone"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.12"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp">
+
+        <EditText
+            android:id="@+id/inputTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:ems="10"
+            android:textSize="30sp"
+            android:textColor="#b10d1e"
+            android:textColorHint="#b10d1e"
+            android:hint="Enter plain text"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.09"
+        android:layout_marginBottom="10dp"
+        android:weightSum="1">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="142dp"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:layout_weight="0.12" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/copyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Copy"
+            android:textAlignment="center"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/resultView"
-        android:layout_width="330dp"
-        android:layout_height="176dp"
-        android:layout_x="29dp"
-        android:layout_y="320dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:ems="10"
         android:textSize="20sp"
         android:textColor="#a64615"
         android:enabled="false"
         android:inputType="textMultiLine"
-        android:imeOptions="actionDone"/>
+        android:imeOptions="actionDone"
+        android:layout_weight="0.75" />
 
-    <Button
-        android:id="@+id/copyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="269dp"
-        android:layout_y="273dp"
-        android:text="Copy" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="142dp"
-        android:layout_height="59dp"
-        android:layout_x="33dp"
-        android:layout_y="207dp"
-        android:textSize="20sp" />
-
-
-</AbsoluteLayout>
+</LinearLayout>
