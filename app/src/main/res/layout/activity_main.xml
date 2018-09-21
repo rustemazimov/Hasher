@@ -23,7 +23,9 @@
             android:textColorHint="#b10d1e"
             android:hint="Enter plain text"
             android:inputType="textMultiLine"
-            android:imeOptions="actionDone" />
+            android:imeOptions="actionDone"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -39,7 +41,8 @@
             android:layout_height="match_parent"
             android:gravity="left"
             android:textSize="20sp"
-            android:layout_weight="0.12" />
+            android:layout_weight="0.12"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
@@ -68,6 +71,7 @@
         android:enabled="false"
         android:inputType="textMultiLine"
         android:imeOptions="actionDone"
-        android:layout_weight="0.75" />
+        android:layout_weight="0.75"
+        android:layout_margin="30dp"/>
 
 </LinearLayout>
