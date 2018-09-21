@@ -22,16 +22,25 @@ import javax.crypto.spec.PBEKeySpec;
  * @author Rustem Azimov
  */
 public class Function {
+    static final String
+                    MD5 = "MD5",
+                    SHA1 = "SHA1",
+                    SHA256 = "SHA256",
+                    SHA512 = "SHA512",
+                    BCRYPT = "BCRYPT",
+                    PBKDF2 = "PBKDF2";
+
+    private final static String problemResponse = "You need support\nContact with us";
 
     String hashText(String text, String methodName){
         switch(methodName){
-            case "MD5": return convertToMD5(text);
-             case "SHA1": return convertToSHA1(text);
-              case "SHA256": return convertToSHA256(text);
-               case "SHA512": return convertToSHA512(text);
-                case "BCRYPT": return convertToBCRYPT(text);
-                 case "PBKDF2": return convertToPBKDF2(text);
-                    default: return "You need support\nContact with us";
+            case MD5: return convertToMD5(text);
+             case SHA1: return convertToSHA1(text);
+              case SHA256: return convertToSHA256(text);
+               case SHA512: return convertToSHA512(text);
+                case BCRYPT: return convertToBCRYPT(text);
+                 case PBKDF2: return convertToPBKDF2(text);
+                    default: return problemResponse;
         }
     }
 
@@ -48,11 +57,11 @@ public class Function {
             }
             return hashedText;
         } catch (NoSuchAlgorithmException ex) {
-            System.out.println("No such Algorithm in MD5"); 
+            System.out.println("No such Algorithm in MD5");
         }
         /*If te program executes the following statement
                 it means that Exception happened*/
-        return "You need support\nContact with us";
+        return problemResponse;
     }
    
     private String convertToSHA1(String text)
@@ -88,7 +97,7 @@ public class Function {
     } catch(UnsupportedEncodingException | NoSuchAlgorithmException ex){
                        //If the jvp is here  Your program is already broken :)))
     }
-        return "You need support\nContact with us";
+        return problemResponse;
 }
 
     private String convertToSHA512(String textToHash)
@@ -101,7 +110,7 @@ public class Function {
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Function.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "You need support\nContact with us";
+        return problemResponse;
     }  
     private String convertToBCRYPT(String password_plaintext) {
 		String salt = BCrypt.gensalt(12);
@@ -153,7 +162,7 @@ public class Function {
         } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
                            //If the jvp is here  Your program is already broken :)))
         }
-        return "You need support\nContact with us";
+        return problemResponse;
     }
     private byte[] pbkdf2(char[] password, byte[] salt, int iterations, int bytes)
         throws NoSuchAlgorithmException, InvalidKeySpecException

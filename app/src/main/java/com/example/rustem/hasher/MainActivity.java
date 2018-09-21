@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
         final String[] options= new String[]
                 {
                         "Select",
-                        "MD5",
-                        "SHA1",
-                        "SHA256",
-                        "SHA512",
-                        "BCRYPT",
-                        "PBKDF2"
+                        Function.MD5,
+                        Function.SHA1,
+                        Function.SHA256,
+                        Function.SHA512,
+                        Function.BCRYPT,
+                        Function.PBKDF2
                 };
         //Specifies a method option for hashing
         Spinner s = (Spinner) findViewById(R.id.spinner);
