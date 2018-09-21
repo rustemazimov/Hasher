@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hasher</string>
+    <string name="input_prompt">Enter plain text</string>
 </resources>

@@ -6,12 +6,16 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import static java.security.AccessController.getContext;
+
 /**
  * @author Rustem Azimov
  *
@@ -24,11 +28,12 @@ public class MainActivity extends AppCompatActivity {
     private Function functions = new Function();
 
     //Text area for giving output (hashed value of plain text
-    private EditText outputTxtView;
+    private EditText inputTxtView, outputTxtView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Options for different hashing methods
         final String[] options= new String[]
                 {
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         Function.BCRYPT,
                         Function.PBKDF2*/
                 };
+
         //Specifies a method option for hashing
         Spinner s = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = new ArrayAdapter(this,
@@ -48,19 +54,14 @@ public class MainActivity extends AppCompatActivity {
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String output;
-                if(position == 0)
-                {
-                    //If "select" option was selected
-                    output = "";
-                }
-                else
-                {
-
-                    output = functions.hashText(((EditText)findViewById(R.id.inputTxt)).getText().toString(), options[position]);
-                }
                 outputTxtView = (EditText)findViewById(R.id.resultView);
-                outputTxtView.setText(output);
+                inputTxtView = (EditText)findViewById(R.id.inputTxt);
+                String inputTxt = inputTxtView.getText().toString();
+                /*
+                 * If "select" option was selected:
+                 *               output = ""
+                 */
+                outputTxtView.setText(position == 0 ? "" : functions.hashText(inputTxt, options[position]));
             }
 
             @Override

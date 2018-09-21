@@ -21,7 +21,7 @@
             android:textSize="30sp"
             android:textColor="#b10d1e"
             android:textColorHint="#b10d1e"
-            android:hint="Enter plain text"
+            android:hint="@string/input_prompt"
             android:inputType="textMultiLine"
             android:imeOptions="actionDone"
             android:layout_marginLeft="10dp"
